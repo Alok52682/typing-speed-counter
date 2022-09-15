@@ -11,23 +11,23 @@
 </head>
 
 <body>
-    <header>
+    <header class=" sticky top-0 z-10">
         <div class="navbar bg-gray-200 sticky top-0">
             <div class="flex-1">
                 <a class="btn btn-ghost normal-case text-3xl bg-amber-500">Blogs</a>
             </div>
             <div class="flex-none">
                 <ul class="menu menu-horizontal p-0">
-                    <li hraf="#Blog-1"><a>Blog 1</a></li>
-                    <li hraf="#Blog-2"><a>Blog 2</a></li>
-                    <li hraf="#Blog-3"><a>Blog 3</a></li>
-                    <li hraf="#Blog-4"><a>Blog 4</a></li>
+                    <li><a href="#firstBlog">Blog 1</a></li>
+                    <li><a href="#secondBlog">Blog 2</a></li>
+                    <li><a href="#thirdBlog">Blog 3</a></li>
+                    <li><a href="#fourthBlog">Blog 4</a></li>
                 </ul>
             </div>
         </div>
     </header>
     <main class="w-10/12 mx-auto mb-10">
-        <section id="Blog-1">
+        <section id="firstBlog">
             <h1 class="text-5xl font-bold text-amber-600 my-10">Blog-1</h1>
             <div class="card w-full glass">
                 <figure><img src="imgs/localstorage.jpeg" class="w-full" alt="car!" /></figure>
@@ -94,7 +94,7 @@
                 </div>
             </div>
         </section>
-        <section id="Blog-2">
+        <section id="secondBlog">
             <h1 class="text-5xl font-bold text-amber-600 my-10">Blog-2</h1>
             <div class="card w-full glass">
                 <figure><img src="imgs/Untitled.png" class="w-full" alt="car!" /></figure>
@@ -139,6 +139,150 @@
                     Now when we try to access the variables from inside the function but outside of that specific block.
                     </p>
 
+
+                </div>
+            </div>
+        </section>
+        <section id="thirdBlog">
+            <h1 class="text-5xl font-bold text-amber-600 my-10">Blog-3</h1>
+            <div class="card w-full glass">
+                <figure><img src="imgs/event-loop-cover.png" class="w-full" alt="car!" /></figure>
+                <div class="card-body">
+                    <h2 class="text-center text-4xl mb-10">How does the Event Loop works in JavaScript?
+                    </h2>
+                    <p>There are three major sections to the execution workflow of any JavaScript program, the call
+                        stack, the web API, and the Task queue.
+                    </p>
+
+
+                    <p><span class="font-bold">The Call Stack :</span>A stack is a data structure in which the last
+                        element added is always the first to be removed from the stack, you could think of it as a stack
+                        of a plate in which only the first plate which was the last added can be removed first. A Call
+                        Stack is simply nothing but a stack data structure where tasks or code is being executed
+                        accordingly.
+                    </p>
+
+                    <p><span class="font-bold">The Web API :</span>This is where code that isn’t handled by the V8
+                        engine is executed to not “block” the main execution thread. When the Call Stack encounters a
+                        web API function, the process is immediately handed over to the Web API, where it is being
+                        executed and freeing the Call Stack to perform other operations during its execution. <br>
+
+                        Let’s go back to our setTimeout example above; <br>
+
+                        When we run the code, the first console.log line gets pushed to the stack and we get our output
+                        almost immediately, on getting to the timeout, timers are handled by browser and aren’t a part
+                        of V8’s core implementation, it’s get pushed to the Web API instead, freeing the stack so it
+                        could perform other operations. <br>
+
+                        While the timeout is still running, the stack goes ahead to the next line of action and runs the
+                        last console.log, which explains why we get that outputted before the timer output. Once the
+                        timer is completed, something happens. The console.log in then timer magically appears in the
+                        call stack again! <br>
+
+                        how?
+                    </p>
+
+                    <p><span class="font-bold">The Event Loop :</span>Before we discuss the event loop, lets first go
+                        through the function of the task queue. <br>
+
+                        Back to our timeout example, once the Web API finishes executing the task, it doesn’t just push
+                        it back to the Call Stack automatically. It goes to the Task Queue. <br>
+
+                        A queue is a data structure that works on the First in First out principle, so as tasks get
+                        pushed into the queue, they get out in that same order. Tasks that have been executed by the Web
+                        API’s, which are being pushed to the Task Queue, then go back to the Call Stack to get their
+                        result printed out. <br>
+                        The event loop is a process that waits for the Call Stack to be clear before pushing callbacks
+                        from the Task Queue to the Call Stack. Once the Stack is clear, the event loop triggers and
+                        checks the Task Queue for available callbacks. If there are any, it pushes it to the Call Stack,
+                        waits for the Call Stack to be clear again, and repeats the same process.
+                    </p>
+                    <p><span class="font-bold">Conclusion :</span>While this is a very basic introduction, the concept
+                        of asynchronous programming in JavaScript gives enough insight to clearly understand what is
+                        going on under the hood and how JavaScript is able to run concurrently and asynchronously with
+                        just a single thread.
+
+
+                    </p>
+
+                </div>
+            </div>
+        </section>
+        <section id="fourthBlog">
+            <h1 class="text-5xl font-bold text-amber-600 my-10">Blog-4</h1>
+            <div class="card w-full glass">
+                <figure><img src="imgs/cover-template--9-.jpeg" class="w-full" alt="car!" /></figure>
+                <div class="card-body">
+                    <h2 class="text-center text-4xl mb-10">JavaScript Check if Undefined – How to Test for Undefined in
+                        JS ?
+                    </h2>
+                    <p class="">An undefined variable or anything without a value will always return
+                        "undefined" in JavaScript.
+                        This is not the same as null, despite the fact that both imply an empty state. <br>
+                        You'll typically assign a value to a variable after you declare it, but this is not always the
+                        case. <br>
+                        When a variable is declared or initialized but no value is assigned to it, JavaScript
+                        automatically displays "undefined". It looks like this: <br>
+                        let myStr;<br>
+
+                        console.log(myStr); // undefined <br>
+                        Also, when you try accessing values in, for example, an array or object that doesn’t exist, it
+                        will throw undefined. <br>
+                        let user = { <br>
+                        name: "John Doe", <br>
+                        age: 14 <br>
+                        };<br>
+
+                        console.log(user.hobby); // undefined <br>
+                        Here's another example: <br>
+
+                        let myArr = [12, 33, 44];<br>
+
+                        console.log(myArr[7]); // undefined <br>
+                        In this article, you will learn the various methods and approaches you can use to know if a
+                        variable is undefined in JavaScript. This is necessary if you want to avoid your code throwing
+                        errors when performing an operation with an undefined variable. <br>
+
+                        In case you are in a rush, here are the three standard methods that can help you check if a
+                        variable is undefined in JavaScript: <br>
+
+                        if(myStr === undefined){} <br>
+                        if(typeof myArr[7] === "undefined"){} <br>
+                        if(user.hobby === void 0){} <br>
+                        Let’s now explain each of these methods in more detail. <br>
+
+
+                    </p>
+
+
+                    <p><span class="font-bold">How to Check if a Variable is Undefined in JavaScript with Direct
+                            Comparison</span>One of the first methods that comes to mind is direct comparison. This is
+                        where you compare the output to see if it returns undefined. You can easily do this in the
+                        following way: <br>
+
+                        let user = {<br>
+                        name: "John Doe",<br>
+                        age: 14<br>
+                        };<br>
+
+                        if (user.hobby === undefined) {<br>
+                        console.log("This is undefined");<br>
+                        }<br>
+                        This also works for arrays as you can see below:<br>
+
+                        let scores = [12, 34, 66, 78];<br>
+
+                        if (scores[10] === undefined) {<br>
+                        console.log("This is undefined");<br>
+                        }
+                        And it definitely also works for other variables:<br>
+
+                        let name;<br>
+
+                        if (name === undefined) {<br>
+                        console.log("This is undefined");<br>
+                        }
+                    </p>
 
                 </div>
             </div>
