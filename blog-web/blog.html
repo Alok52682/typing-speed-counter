@@ -1,0 +1,151 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogs</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.27.0/dist/full.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <header>
+        <div class="navbar bg-gray-200 sticky top-0">
+            <div class="flex-1">
+                <a class="btn btn-ghost normal-case text-3xl bg-amber-500">Blogs</a>
+            </div>
+            <div class="flex-none">
+                <ul class="menu menu-horizontal p-0">
+                    <li hraf="#Blog-1"><a>Blog 1</a></li>
+                    <li hraf="#Blog-2"><a>Blog 2</a></li>
+                    <li hraf="#Blog-3"><a>Blog 3</a></li>
+                    <li hraf="#Blog-4"><a>Blog 4</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <main class="w-10/12 mx-auto mb-10">
+        <section id="Blog-1">
+            <h1 class="text-5xl font-bold text-amber-600 my-10">Blog-1</h1>
+            <div class="card w-full glass">
+                <figure><img src="imgs/localstorage.jpeg" class="w-full" alt="car!" /></figure>
+                <div class="card-body">
+                    <h2 class="text-center text-4xl mb-10">Difference Between Local Storage And Session Storage
+                    </h2>
+                    <p><span class="font-bold">Local Storage:</span> This read-only interface property provides access
+                        to the Document’s local storage object, the stored data is stored across browser sessions.
+                        Similar to sessionStorage, except that localStorage data gets cleared when the page session ends
+                        – that is when the page is closed. It is cleared when the last “private” tab of a browser is
+                        closed (localStorage data for a document loaded in a private browsing or incognito session).</p>
+                    <p><span class="font-semibold">Local storage has 4 methods:</span><br>
+                        <span class="font-bold">setItem() Method – </span>This method takes two parameters one is key
+                        and another one is value. It is used to store the value in a particular location with the name
+                        of the key. <br>
+                        <span class="font-semibold">Method : </span>localStorage.setItem(key, value)
+                    </p>
+                    <p>
+                        <span class="font-semibold">getItem() Method – </span> This method takes one parameter that is
+                        key
+                        which is used to get the value stored with a particular key name.
+                        <br>
+                        <span class="font-semibold">Method : </span>localStorage.getItem(key)
+                    </p>
+                    <p>
+                        <span class="font-semibold">removeItem() Method –</span> This is method is used to remove the
+                        value
+                        stored in the memory in reference to key. <br>
+                        <span class="font-semibold">Method : </span>localStorage.removeItem(key)
+                    </p>
+                    <p class="mb-10">
+                        <span class="font-semibold">clear() Method –</span>This method is used to clear all the values
+                        stored in localstorage.<br>
+                        <span class="font-semibold">Method : </span>localStorage.clear()
+                    </p>
+                    <!-- session storage -->
+
+                    <p><span class="font-bold">Session Storage:</span>Session Storage objects can be accessed using the
+                        sessionStorage read-only property. The difference between sessionStorage and localStorage is
+                        that localStorage data does not expire, whereas sessionStorage data is cleared when the page
+                        session ends.</p>
+                    <p><span class="font-semibold">Session Storage has 4 methods:</span><br>
+                        <span class="font-bold">setItem() Method – </span> This method takes two parameters one is key
+                        and another one is value. It is used to store the value in a particular location with the name
+                        of the key.<br>
+                        <span class="font-semibold">Method : </span>sessionStorage.setItem(key, value)
+                    </p>
+                    <p>
+                        <span class="font-semibold">getItem() Method – </span> This method takes one parameter that is
+                        key which is used to get the value stored with a particular key name.<br>
+                        <span class="font-semibold">Method : </span>sessionStorage.getItem(key)
+                    </p>
+                    <p>
+                        <span class="font-semibold">removeItem() Method –</span> This is method is used to remove the
+                        value stored in the memory in reference to key.<br>
+                        <span class="font-semibold">Method : </span>sessionStorage.removeItem(key)
+                    </p>
+                    <p class="mb-10">
+                        <span class="font-semibold">clear() Method –</span> This method is used to clear all the values
+                        stored in the session storage<br>
+                        <span class="font-semibold">Method : </span>sessionStorage.clear()
+                    </p>
+
+                </div>
+            </div>
+        </section>
+        <section id="Blog-2">
+            <h1 class="text-5xl font-bold text-amber-600 my-10">Blog-2</h1>
+            <div class="card w-full glass">
+                <figure><img src="imgs/Untitled.png" class="w-full" alt="car!" /></figure>
+                <div class="card-body">
+                    <h2 class="text-center text-4xl mb-10">Difference Between Global Scope And Block Scope.
+                    </h2>
+                    <p><span class="font-bold">Global Scope:</span> The variables defined outside of any function or
+                        curly brackets are known as global variables and have global scope. Global scope means that the
+                        variables can be accessed from any part of that program, any function or conditional state can
+                        access that variable.<br>
+                        <span class="font-semibold">Example : </span> <br>
+                        var name = "linuxHint"; <br>
+
+                        function printName(){<br>
+                        // the variable can be accessed inside here<br>
+                        console.log("This tutorial is by "+name);<br>
+                        }<br>
+
+                        printName(); <br>
+
+                        Output: This tutorial is by linuxHint
+                    </p>
+
+                    <!-- Block Scope -->
+                    <span class="font-bold">Block Scope :</span> Block scope is also a sub-type of local scope. The
+                    block scope can be defined as the scope of the variables inside the curly brackets {}. Now, these
+                    curly brackets can be of loops, or conditional statements, or something else. You are only allowed
+                    to refer to these variables from within the curly brackets {}.<br>
+                    Imagine a nested situation : A block of code enclosed with curly brackets{} containing some block
+                    variables. <br>
+                    { <br>
+                    let a = 10;<br>
+                    const b = 5;<br>
+                    } <br>
+                    This block of code is itself inside a function. <br>
+                    function addition() { <br>
+                    { <br>
+                    let a = 10; <br>
+                    const b = 5; <br>
+                    } <br>
+                    } <br>
+                    Now when we try to access the variables from inside the function but outside of that specific block.
+                    </p>
+
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+</body>
+
+</html>
