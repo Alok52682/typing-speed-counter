@@ -148,16 +148,15 @@ button {
 }
 
 #histories {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 10px;
 }
 
 .card {
-  width: 100%;
-  height: 100%;
   padding: 50px;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
   padding: 20px 30px;
@@ -172,9 +171,6 @@ button {
   gap: 10px;
 }
 
-.card h3:nth-of-type(1) {
-  flex-basis: 50%;
-}
 
 #modal-background {
   background: rgb(255, 255, 255);
@@ -192,6 +188,10 @@ button {
   .box-container {
     padding: 0 20px;
     width: 100%;
+  }
+
+  #histories {
+    display: block;
   }
 
   #question {
@@ -215,5 +215,9 @@ button {
     height: 170px;
     font-size: 26px;
     padding: 10px;
+  }
+
+  #histories {
+    grid-template-columns: auto auto;
   }
 }
