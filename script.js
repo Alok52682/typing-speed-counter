@@ -5,6 +5,10 @@ const countdownOverlay = document.getElementById("countdown");
 const resultModal = document.getElementById("result");
 const modalBackground = document.getElementById("modal-background");
 
+window.onkeydown = function (e) {
+  return !(e.keyCode == 32);
+};
+
 // variables
 let userText = "";
 let errorCount = 0;
